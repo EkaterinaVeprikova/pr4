@@ -23,13 +23,13 @@ if (!empty($messages)) {
 // и задавая начальные значения элементов ранее сохраненными.
 ?>
 
-    <form action="" method="POST">
+   /* <form action="" method="POST">
       <input name="fio" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" />
       <input type="submit" value="ok" />
-    </form>
+    </form>*/
    
     ===================================================================================================================
-     <form action="index.php" method="POST">
+     <form action=" " method="POST">
             <label>
                 Имя:<br />
                 <input name="name" <?php if ($errors['name']) {print 'class="error"';} ?>
