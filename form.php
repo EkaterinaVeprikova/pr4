@@ -24,12 +24,12 @@ if (!empty($messages)) {
 ?>
 
    /* <form action="" method="POST">
-      <input name="fio" <?php if ($errors['fio']) {print 'class="error"';} ?> value="<?php print $values['fio']; ?>" />
+      <input name="fio" <?php /* if ($errors['fio']) {print 'class="error"';} */ ?> value="<?php /* print $values['fio']; */ ?>" />
       <input type="submit" value="ok" />
     </form>*/
    
     ===================================================================================================================
-     <form action=" " method="POST">
+     <form action="" method="POST">
             <label>
                 Имя:<br />
                 <input name="name" <?php if ($errors['name']) {print 'class="error"';} ?>
