@@ -26,7 +26,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 
   // Складываем признак ошибок в массив.
   $errors = array();
-  $errors['fio'] = !empty($_COOKIE['fio_error']);
+  $errors['name'] = !empty($_COOKIE['name_error']);
+  $errors['email'] = !empty($_COOKIE['email_error']);
+  $errors['year_of_birth'] = !empty($_COOKIE['year_of_birth_error']);
+  $errors['gender'] = !empty($_COOKIE['gender_error']);
+  $errors['number_of_limbs'] = !empty($_COOKIE['number_of_limbs_error']);
+  $errors['superpowers-3'] = !empty($_COOKIE['superpowers-3_error']);
+  $errors['biography'] = !empty($_COOKIE['biography_error']);
+  
   // TODO: аналогично все поля.
 
   // Выдаем сообщения об ошибках.
