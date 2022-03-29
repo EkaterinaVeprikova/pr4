@@ -29,7 +29,7 @@ if (!empty($messages)) {
     </form>
    
     ===================================================================================================================
-     <form action="index3.php" method="POST">
+     <form action="index.php" method="POST">
             <label>
                 Имя:<br />
                 <input name="name" <?php if ($errors['name']) {print 'class="error"';} ?>
