@@ -3,7 +3,7 @@
     <style>
 /* Сообщения об ошибках и поля с ошибками выводим с красным бордюром. */
 .error {
-  border: 2px solid red;
+  border: 5px solid red;
 }
     </style>
   </head>
