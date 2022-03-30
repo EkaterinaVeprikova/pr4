@@ -100,8 +100,7 @@ if (!empty($messages)) {
             <br />
             <label>
                 <input type="checkbox" 
-                       name="policy" <?php if ($errors['policy']) {print 'class="error"';} ?>
-                       value = "<?php print $values['policy']; ?>"/>
+                       name="policy" <?php if ($errors['policy']) {print 'class="error"';} ? />
                 да
             </label><br />
             <input type="submit" value="Отправить" />
