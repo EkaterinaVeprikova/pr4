@@ -104,14 +104,68 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 else {
   // Проверяем ошибки.
   $errors = FALSE;
-  if (empty($_POST['fio'])) {
-    // Выдаем куку на день с флажком об ошибке в поле fio.
-    setcookie('fio_error', '1', time() + 24 * 60 * 60);
+  if (empty($_POST['name'])) {
+    // Выдаем куку на день с флажком об ошибке в поле name.
+    setcookie('name_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
   }
   else {
     // Сохраняем ранее введенное в форму значение на месяц.
-    setcookie('fio_value', $_POST['fio'], time() + 30 * 24 * 60 * 60);
+    setcookie('name_value', $_POST['name'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['email'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('email_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['year_of_birth'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('year_of_birth_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('year_of_birth_value', $_POST['year_of_birth'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['gender'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('gender_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('gender_value', $_POST['gender'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['number_of_limbs'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('number_of_limbs_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('number_of_limbs_value', $_POST['number_of_limbs'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['superpowers-3'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('superpowers-3_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('superpowers-3_value', $_POST['superpowers-3'], time() + 30 * 24 * 60 * 60);
+  }
+  if (empty($_POST['biography'])) {
+    // Выдаем куку на день с флажком об ошибке в поле fio.
+    setcookie('biography_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
+    // Сохраняем ранее введенное в форму значение на месяц.
+    setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60);
   }
 
 // *************
@@ -119,6 +173,10 @@ else {
 // Сохранить в Cookie признаки ошибок и значения полей.
 // *************
 
+  
+  
+  
+  
   if ($errors) {
     // При наличии ошибок перезагружаем страницу и завершаем работу скрипта.
     header('Location: index.php');
@@ -126,7 +184,14 @@ else {
   }
   else {
     // Удаляем Cookies с признаками ошибок.
-    setcookie('fio_error', '', 100000);
+    setcookie('name_error', '', 100000);
+    setcookie('email_error', '', 100000);
+    setcookie('year_of_birth_error', '', 100000);
+    setcookie('gender_error', '', 100000);
+    setcookie('number_of_limbs_error', '', 100000);
+    setcookie('superpowers-3_error', '', 100000);
+    setcookie('biography_error', '', 100000);
+    
     // TODO: тут необходимо удалить остальные Cookies.
   }
 
