@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Удаляем куку, указывая время устаревания в прошлом.
     setcookie('save', '', 100000);
     // Если есть параметр save, то выводим сообщение пользователю.
-    $messages[] = 'Спасибо, результаты сохранены.';
+    $messages[] = 'Спасибо, результаты сохранены!';
   }
 
   // Складываем признак ошибок в массив.
@@ -37,17 +37,62 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   // TODO: аналогично все поля.
 
   // Выдаем сообщения об ошибках.
-  if ($errors['fio']) {
+  if ($errors['name']) {
     // Удаляем куку, указывая время устаревания в прошлом.
-    setcookie('fio_error', '', 100000);
+    setcookie('name_error', '', 100000);
     // Выводим сообщение.
-    $messages[] = '<div class="error">Заполните имя.</div>';
+    $messages[] = '<div class="error">Вы не заполнили имя!</div>';
+  }
+    if ($errors['email']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('email_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не заполнили e-mail!</div>';
+  }
+    if ($errors['year_of_birth']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('year_of_birth_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не выбрали год!</div>';
+  }
+    if ($errors['gender']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('gender_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не указали пол!</div>';
+  }
+      if ($errors['number_of_limbs']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('number_of_limbs_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не указали количество конечностей!</div>';
+  }
+      if ($errors['superpowers-3']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('superpowers-3_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не указали суперспособности!</div>';
+  }
+      if ($errors['biography']) {
+    // Удаляем куку, указывая время устаревания в прошлом.
+    setcookie('biography_error', '', 100000);
+    // Выводим сообщение.
+    $messages[] = '<div class="error">Вы не рассказали о себе!</div>';
   }
   // TODO: тут выдать сообщения об ошибках в других полях.
 
+  
+  
+  
   // Складываем предыдущие значения полей в массив, если есть.
   $values = array();
-  $values['fio'] = empty($_COOKIE['fio_value']) ? '' : $_COOKIE['fio_value'];
+  $values['name'] = empty($_COOKIE['name_value']) ? '' : $_COOKIE['name_value'];
+  $values['email'] = empty($_COOKIE['email_value']) ? '' : $_COOKIE['email_value'];
+  $values['year_of_birth'] = empty($_COOKIE['year_of_birth_value']) ? '' : $_COOKIE['year_of_birth_value'];
+  $values['gender'] = empty($_COOKIE['gender_value']) ? '' : $_COOKIE['gender_value'];
+  $values['number_of_limbs'] = empty($_COOKIE['number_of_limbs_value']) ? '' : $_COOKIE['number_of_limbs_value'];
+  $values['superpowers-3'] = empty($_COOKIE['superpowers-3_value']) ? '' : $_COOKIE['superpowers-3_value'];
+  $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
   // TODO: аналогично все поля.
 
   // Включаем содержимое файла form.php.
