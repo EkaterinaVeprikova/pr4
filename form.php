@@ -4,7 +4,7 @@
 /* Сообщения об ошибках и поля с ошибками выводим с красным бордюром. */
 .error {
   border: 5px solid red;
-  box-shadow: 20px #555;
+  border-radius: 5px;
 }
     </style>
   </head>
