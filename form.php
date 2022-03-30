@@ -5,6 +5,7 @@
 .error {
   border: 5px solid red;
   border-radius: 5px;
+  margin-right: 50%;
 }
     </style>
   </head>
