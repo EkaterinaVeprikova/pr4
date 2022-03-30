@@ -122,7 +122,7 @@ else {
     // Сохраняем ранее введенное в форму значение на месяц.
     setcookie('email_value', $_POST['email'], time() + 30 * 24 * 60 * 60);
   }
-  if ($_POST['year_of_birth'] == "default")) {
+  if ($_POST['year_of_birth_error'] == "default")) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('year_of_birth_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
