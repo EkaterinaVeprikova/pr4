@@ -94,8 +94,8 @@ if (!empty($messages)) {
             </label><br />
             <label>
                 Биография:<br />
-                <textarea name="biography" <?php if ($errors['biography']) {print 'class="error"';} ?>> 
-                          value = "<?php print $values['biography']; ?>"
+                <textarea name="biography" <?php if ($errors['biography']) {print 'class="error"';} ?> 
+                          value = "<?php print $values['biography']; ?>">
                 </textarea>
             </label><br />
             С контрактом ознакомлен(а)
