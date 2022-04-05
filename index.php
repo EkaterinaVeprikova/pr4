@@ -166,7 +166,7 @@ else {
     // Сохраняем ранее введенное в форму значение на месяц.
     setcookie('superpowers-3_value', $_POST['superpowers-3'], time() + 30 * 24 * 60 * 60);
   }
-  if (!ereg("^[ а-яa-z0-9[b]\s[/b]]{0,1000}$",$_POST['biography'])) {
+  if (empty($_POST['biography'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
     setcookie('biography_error', '1', time() + 24 * 60 * 60);
     $errors = TRUE;
