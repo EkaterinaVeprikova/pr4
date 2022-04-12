@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Выводим сообщение.
     $messages[] = '<div class="error">Вы не заполнили e-mail!</div>';
   }
-    if ($errors['year_of_birth'] == "default") {
+    if ($errors['year_of_birth']) {
     // Удаляем куку, указывая время устаревания в прошлом.
     setcookie('year_of_birth_error', '', 100000);
     // Выводим сообщение.
