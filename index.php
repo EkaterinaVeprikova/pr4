@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $errors['number_of_limbs'] = !empty($_COOKIE['number_of_limbs_error']);
   $errors['superpowers-3'] = !empty($_COOKIE['superpowers-3_error']);
   $errors['biography'] = !empty($_COOKIE['biography_error']);
-  //$errors['policy'] = !empty($_COOKIE['policy_error']);
+  $errors['policy'] = !empty($_COOKIE['policy_error']);
   
   // TODO: аналогично все поля.
 
@@ -80,12 +80,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     // Выводим сообщение.
     $messages[] = '<div class="error">Вы не рассказали о себе!</div>';
   }
-  // if ($errors['policy']) {
+    if ($errors['policy']) {
     // Удаляем куку, указывая время устаревания в прошлом.
-   // setcookie('policy_error', '', 100000);
+    setcookie('policy_error', '', 100000);
     // Выводим сообщение.
-    //$messages[] = '<div class="error">Вы не рассказали о себе!</div>';
-  //}
+    $messages[] = '<div class="error">Вы не рассказали о себе!</div>';
+  }
   // TODO: тут выдать сообщения об ошибках в других полях.
 
   
@@ -100,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
   $values['number_of_limbs'] = empty($_COOKIE['number_of_limbs_value']) ? '' : $_COOKIE['number_of_limbs_value'];
   $values['superpowers-3'] = empty($_COOKIE['superpowers-3_value']) ? '' : $_COOKIE['superpowers-3_value'];
   $values['biography'] = empty($_COOKIE['biography_value']) ? '' : $_COOKIE['biography_value'];
-  //$values['policy'] = empty($_COOKIE['policy_value']) ? '' : $_COOKIE['policy_value'];
+  $values['policy'] = empty($_COOKIE['policy_value']) ? '' : $_COOKIE['policy_value'];
   // TODO: аналогично все поля.
 
   // Включаем содержимое файла form.php.
@@ -175,15 +175,15 @@ else {
     // Сохраняем ранее введенное в форму значение на месяц.
     setcookie('biography_value', $_POST['biography'], time() + 30 * 24 * 60 * 60);
   }
-  //if (empty($_POST['policy'])) {
+  if (empty($_POST['policy'])) {
     // Выдаем куку на день с флажком об ошибке в поле fio.
-    //setcookie('policy_error', '1', time() + 24 * 60 * 60);
-    //$errors = TRUE;
-  //}
-  //else {
+    setcookie('policy_error', '1', time() + 24 * 60 * 60);
+    $errors = TRUE;
+  }
+  else {
     // Сохраняем ранее введенное в форму значение на месяц.
-    //setcookie('policy_value', $_POST['policy'], time() + 30 * 24 * 60 * 60);
-  //}
+    setcookie('policy_value', $_POST['policy'], time() + 30 * 24 * 60 * 60);
+  }
 
 // *************
 // TODO: тут необходимо проверить правильность заполнения всех остальных полей.
@@ -204,7 +204,7 @@ else {
     setcookie('number_of_limbs_error', '', 100000);
     setcookie('superpowers-3_error', '', 100000);
     setcookie('biography_error', '', 100000);
-    //setcookie('policy_error', '', 100000);
+    setcookie('policy_error', '', 100000);
     
     // TODO: тут необходимо удалить остальные Cookies.
   }
@@ -216,13 +216,14 @@ $db = new PDO('mysql:host=localhost;dbname=u47560', $user, $pass, array(PDO::ATT
 
 // Подготовленный запрос. Не именованные метки.
 try {
-    $stmt = $db->prepare("INSERT INTO my_table2 SET name = ?, email = ?, year_of_birth = ?, gender = ?, number_of_limbs = ?");
+    $stmt = $db->prepare("INSERT INTO my_table2 SET name = ?, email = ?, year_of_birth = ?, gender = ?, number_of_limbs = ?, biography = ?");
     $stmt->execute(array(
          $_POST['name'],
          $_POST['email'],
          $_POST['year_of_birth'],
          $_POST['gender'],
          $_POST['number_of_limbs'],
+         $_POST['biography'],
     ));  
    
     $stmt = $db->prepare("INSERT INTO supers SET name = ?");
