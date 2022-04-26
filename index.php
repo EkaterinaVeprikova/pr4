@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
    // setcookie('policy_error', '', 100000);
     // Выводим сообщение.
     //$messages[] = '<div class="error">Вы не рассказали о себе!</div>';
-  }
+  //}
   // TODO: тут выдать сообщения об ошибках в других полях.
 
   
