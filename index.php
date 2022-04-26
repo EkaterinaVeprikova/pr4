@@ -216,7 +216,7 @@ $db = new PDO('mysql:host=localhost;dbname=u47560', $user, $pass, array(PDO::ATT
 
 // Подготовленный запрос. Не именованные метки.
 try {
-    $stmt = $db->prepare("INSERT INTO users SET name = ?, email = ?, year_of_birth = ?, gender = ?, number_of_limbs = ?");
+    $stmt = $db->prepare("INSERT INTO my_table2 SET name = ?, email = ?, year_of_birth = ?, gender = ?, number_of_limbs = ?");
     $stmt->execute(array(
          $_POST['name'],
          $_POST['email'],
