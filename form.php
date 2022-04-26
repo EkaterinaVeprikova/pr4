@@ -2,11 +2,11 @@
   <head>
     <style>
 /* Сообщения об ошибках и поля с ошибками выводим с красным бордюром. */
-.error {
-  border: 5px solid red;
-  border-radius: 5px;
-  margin-bottom: 1px;
-}
+      .error {
+      border: 5px solid red;
+      border-radius: 5px;
+      margin-bottom: 1px;
+      }
     </style>
   </head>
   <body>
@@ -24,8 +24,6 @@ if (!empty($messages)) {
 // Далее выводим форму отмечая элементы с ошибками классом error
 // и задавая начальные значения элементов ранее сохраненными.
 ?>
-
-    ===================================================================================================================
      <form action="" method="POST">
             <label>
                 Имя:<br />
@@ -41,7 +39,7 @@ if (!empty($messages)) {
             </label><br />
             <label>
                 Год рождения:<br />
-                <select name="year_of_birth[]" <?php if ($errors['year_of_birth']) {print 'class="error"';} ?>>
+                <select name="year_of_birth" <?php if ($errors['year_of_birth']) {print 'class="error"';} ?>>
                     <option value="default hidden <?php print $values['year_of_birth']; ?>" >выберите из списка</option>
                     <option>1998</option>
                     <option>1999</option>
@@ -107,6 +105,5 @@ if (!empty($messages)) {
             </label><br />
             <input type="submit" value="Отправить" />
         </form>
-    ==================================================================================================================
   </body>
 </html>
