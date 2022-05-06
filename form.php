@@ -71,14 +71,14 @@ if (!empty($messages)) {
             <label>
                 <input type="radio"
                        name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} 
-                       if($values['number_of_limbs']=="4"){print "checked='checked'";}?> value="4" />                
-                4
+                       if($values['number_of_limbs']=="3"){print "checked='checked'";}?> value="3" />                
+                3
             </label><br />
             <label>
                 <input type="radio"
                        name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} 
-                       if($values['number_of_limbs']=="other"){print "checked='checked'";}?> value="other" />                
-                другое 
+                       if($values['number_of_limbs']=="4"){print "checked='checked'";}?> value="4" />                
+                4
             </label><br />
             <label>
                 Сверхспособности:
