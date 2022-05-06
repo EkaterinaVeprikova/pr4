@@ -51,56 +51,56 @@ if (!empty($messages)) {
             Пол:<br />
             <label>
                 <input type="radio"
-                       name="gender" <?php if ($errors['gender']) {print 'class="error"';} ?>
-                       value="male <?php print $values['gender']; ?>" />
+                       name="gender" <?php if ($errors['gender']) {print 'class="error"';} 
+                       if($values['gender']=="male"){print "checked='checked'";}?> value="male" />
                 мужской
             </label>
             <label>
-                <input type="radio" 
-                       name="gender" <?php if ($errors['gender']) {print 'class="error"';} ?>
-                       value="female" <?php print $values['gender']; ?> />
+            <input type="radio"
+                       name="gender" <?php if ($errors['gender']) {print 'class="error"';} 
+                       if($values['gender']=="female"){print "checked='checked'";}?> value="female" />                
                 женский
             </label><br />
             Количество конечностей:<br />
             <label>
                 <input type="radio"
-                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} ?>
-                       value="2 <?php print $values['number_of_limbs']; ?>" />
-                2   
+                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} 
+                       if($values['number_of_limbs']=="2"){print "checked='checked'";}?> value="2" />                
+                2
             </label>
             <label>
-                <input type="radio" 
-                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} ?>
-                       value="4 <?php print $values['number_of_limbs']; ?>" />
-                4   
+                <input type="radio"
+                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} 
+                       if($values['number_of_limbs']=="4"){print "checked='checked'";}?> value="4" />                
+                4
             </label><br />
             <label>
                 <input type="radio"
-                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} ?>
-                       value="other <?php print $values['number_of_limbs']; ?>" />
-                другое
+                       name="number_of_limbs" <?php if ($errors['number_of_limbs']) {print 'class="error"';} 
+                       if($values['number_of_limbs']=="other"){print "checked='checked'";}?> value="other" />                
+                другое 
             </label><br />
             <label>
                 Сверхспособности:
                 <br />
                 <select name="superpowers-3[]" <?php if ($errors['superpowers-3']) {print 'class="error"';} ?>
                         multiple="multiple">
-                    <option value="immortality <?php print $values['superpowers-3']; ?>" >бессмертие</option>
-                    <option value="passing_through_walls <?php print $values['superpowers-3']; ?>">прохождение сквозь стены</option>
-                    <option value="levitation <?php print $values['superpowers-3']; ?>">левитация</option>
+                    <option value="immortality <?php if($values['superpowers-3']=="immortality"){print "selected='selected'";}?>" >бессмертие</option>
+                    <option value="passing_through_walls <?php if($values['superpowers-3']=="passing_through_walls"){print "selected='selected'";}?>" >прохождение сквозь стены</option>
+                    <option value="levitation <?php if($values['superpowers-3']=="levitation"){print "selected='selected'";}?>" >левитация</option>
                 </select>
             </label><br />
             <label>
                 Биография:<br />
                 <textarea name="biography" <?php if ($errors['biography']) {print 'class="error"';} ?> 
-                          value = "<?php print $values['biography']; ?>">
+                          value = "biography" <?php print $values['biography']; ?> >
                 </textarea>
             </label><br />
             С контрактом ознакомлен(а)
             <br />
             <label>
                 <input type="checkbox" 
-                       name="policy" <?php if ($errors['policy']) {print 'class="error"';} ?> />
+                       name="policy" <?php if($values['policy']=="check"){print "checked='checked'";}?> value="check" />
                 да
             </label><br />
             <input type="submit" value="Отправить" />
